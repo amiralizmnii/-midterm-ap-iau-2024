@@ -1,0 +1,57 @@
+<html lang="fa"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تولید کننده گذرواژه تصادفی</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body { padding-top: 50px; }
+    .container { max-width: 400px; }
+  </style>
+  </head>
+  <body>
+  <div class="container" style="
+      border: 1px solid #ccc;
+      padding: 35px;
+      border-radius: 36px;
+  ">
+    <h2 style="
+      font-size: 20px;
+      float: none;
+      text-align: center;
+      background: #446681;
+      padding: 16px;
+      border-radius: 12px;
+      color: #fff;
+  ">تولید کننده گذرواژه تصادفی</h2>
+    <div class="form-group"><br><label for="passwordLength" style="
+      float: right;
+      text-align: center;
+  ">طول گذرواژه:</label>
+      <input type="number" class="form-control" id="passwordLength" placeholder="طول گذرواژه" min="1" max="128" value="12">
+    </div>
+    <button class="btn btn-primary" onclick="generatePassword()" style="background-color: #4a5c6a;border-color: #fff;">تولید گذرواژه</button>
+    <div class="form-group">
+      <label for="generatedPassword" style="
+      float: right;
+  ">گذرواژه تولید شده</label>
+      <input type="text" class="form-control" id="generatedPassword" placeholder="گذرواژه تصادفی" readonly="">
+    </div>
+  </div>
+  
+  <script>
+  function generatePassword() {
+    var length = document.getElementById('passwordLength').value;
+    var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+    var retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+      retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    document.getElementById('generatedPassword').value = retVal;
+  }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  
+  </body></html>
